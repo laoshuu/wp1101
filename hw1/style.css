@@ -1,0 +1,92 @@
+@keyframes change_background
+{
+    
+    0% {background-image: url(back1.jfif);}
+    20% {background-image: url(back2.jpg);}
+    40% {background-image:url(back4.jpg);}
+    60% {background-image:url(back5.jpg);}
+    80% {background-image: url(back.jpg);}
+    100% {background-image: url(back1.jfif);}
+}
+
+.background
+{
+    background-image: url(back1.jfif);
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    top: 0px;
+    left: 0px;
+}
+
+.background-animation
+{
+    background-image: url(back.jfif);
+    animation-name: change_background;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+}
+
+.title_container
+{
+    position: absolute;
+    top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+    
+}
+
+.title
+{
+    font-size: 4em;
+    color: yellowgreen;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/* .line
+{
+    border: black 1px solid;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+} */
+
+.main_pic_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+}
+
+
+.photo_container
+{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 550px; 
+    
+}
+
+.photo_container img
+{
+    height: 100px;
+}
+
+.photo_container div
+{
+    border: 3px solid rgb(218, 209, 212);
+}
+.photo_container div:hover
+{
+    border: 3px solid rgb(247, 0, 255)
+}
+
