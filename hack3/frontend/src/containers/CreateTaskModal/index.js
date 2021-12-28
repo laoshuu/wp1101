@@ -42,6 +42,7 @@ export default function CreateTaskModal({ open, handleCloseCreateTaskModal }) {
 
   // TODO 4.2 Uncomment the following lines
   const [createTask] = useMutation(CREATE_TASK_MUTATION);
+
   const handleCreate = () => {
     if (Object.values(formData).some((v) => !v)) {
       setDisplayError(true);
