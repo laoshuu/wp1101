@@ -92,10 +92,8 @@ export default function Dashboard() {
     // TODO 3 Use `updateTask` and pass the correct variables
     updateTask({
       variables: {
-        input: {
-          id: id,
-          status: status,
-        }
+        id: id,
+        status: status
       }
     })
   };
