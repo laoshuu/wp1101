@@ -1,5 +1,5 @@
 ## [110-1] Web Programming Final (Group 21) 籃球比賽數據表 
-## [組員] B08705059 蕭瑀 B09705044 王裕勳 
+#### [組員] B08705059 蕭瑀 B09705044 王裕勳 
 ## [ Demo 影片連結 ] https://youtu.be/aSAZ5Eo0Cvk
 ## [ 描述 ] 將系隊一般比賽使用的紙本數據表數位化，並提供儲存、查看歷史紀錄等功能。 
 ## [ Deployed ] https://myfirstapp1111111.herokuapp.com/
