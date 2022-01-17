@@ -18,7 +18,7 @@ https://myfirstapp1111111.herokuapp.com/
 
 #### [測試之詳細步驟]
 
-已補上deploy網址，本地端需在final的資料夾下yarn build以及yarn start來測試我們的網站。同時要在資料夾yarn add axios moment @material-ui @mui/icons-material styled-components @emotion/react @emotion/styled。
+已補上deploy網址，本地端需在final的資料夾下yarn build以及yarn start之後開啟網址localhost:5000 來測試我們的網站。同時要在資料夾yarn add axios moment @material-ui @mui/icons-material styled-components @emotion/react @emotion/styled。
 
 #### [每位組員之負責項目]
 
