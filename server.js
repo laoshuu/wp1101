@@ -17,15 +17,16 @@ import mongo from "./backend/mongo.js";
 import apiRoute from "./backend/route/api.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 5000;
 
 const typeDefs = importSchema("./backend/schema.graphql");
 const pubsub = new PubSub();
 const app = express();
 
 app.use(cors());
-app.use("/api", apiRoute);
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+app.use("/", apiRoute);
 app.use(express.static(path.join(__dirname, "build")));
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));

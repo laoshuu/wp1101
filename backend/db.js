@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const { Schema } = mongoose;
-mongoose.set('useCreateIndex', true);
+// mongoose.set('useCreateIndex', true);
 
 const peopleSchema = new Schema({
   ssn: { type: String, required: true, unique: true },
