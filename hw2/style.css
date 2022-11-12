@@ -1,51 +1,78 @@
-@keyframes appendix_hover 
-{
-    0%{width: 50%;}
-    10%{width: 55%;}
-    20%{width: 60%;}
-    30%{width: 65%;}
-    40%{width: 70%;}  
-    50%{width: 75%;}
-    60%{width: 80%;}
-    70%{width: 85%;}
-    80%{width: 90%;}
-    90%{width: 95%;}
-    100%{width: 100%;}
+@keyframes appendix_hover {
+    0% {
+        width: 50%;
+    }
+
+    10% {
+        width: 55%;
+    }
+
+    20% {
+        width: 60%;
+    }
+
+    30% {
+        width: 65%;
+    }
+
+    40% {
+        width: 70%;
+    }
+
+    50% {
+        width: 75%;
+    }
+
+    60% {
+        width: 80%;
+    }
+
+    70% {
+        width: 85%;
+    }
+
+    80% {
+        width: 90%;
+    }
+
+    90% {
+        width: 95%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 html,
-body
-{
+body {
     height: 100%;
     overflow: hidden;
     box-sizing: border-box;
     background: #f8f1e5;
 }
 
-.background
-{
+.background {
     background-image: url("back.jpg");
     opacity: 0.5;
     height: 100%;
     width: 100%;
-    position: absolute; 
+    position: absolute;
     top: 0px;
     left: 0px;
 }
 
-.background_water
-{
+.background_water {
     background-image: url("too water.jpg");
     height: 100%;
     width: 100%;
-    position: absolute; 
+    position: absolute;
     top: 0px;
     left: 0px;
     opacity: 0.5;
 }
 
-.title_container
-{
+.title_container {
     position: relative;
     top: 10px;
     display: flex;
@@ -56,64 +83,57 @@ body
     align-items: center;
 }
 
-.title
-{
+.title {
     font-size: 10vh;
     color: aliceblue;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.title1
-{
+.title1 {
     font-size: 10vh;
     color: darkcyan;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.title2
-{
+.title2 {
     font-size: 10vh;
     color: aquamarine;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.appendix
-{
+.appendix {
     position: absolute;
     top: 15vh;
     height: 60vh;
     width: 150px;
     /* border: black solid 2px; */
-    font-size: 20px ;
+    font-size: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
 }
 
-.appendix div
-{
+.appendix div {
     border: black solid 1px;
-    background-color:darksalmon;
+    background-color: darksalmon;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color:lavender;
+    color: lavender;
     border-radius: 10px;
-    text-align:center;
+    text-align: center;
     line-height: 4vh;
     width: 50%;
     height: 7%;
     font-size: 3vh;
 }
 
-.appendix div:hover
-{
+.appendix div:hover {
     cursor: pointer;
     animation-name: appendix_hover;
     animation-duration: 0.25s;
     width: 100%;
 }
 
-.main_pic_container
-{
+.main_pic_container {
     display: flex;
     justify-content: center;
     position: relative;
@@ -123,52 +143,46 @@ body
 }
 
 
-.photo_container
-{
+.photo_container {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
     position: relative;
-    top: 5vh; 
+    top: 5vh;
     height: 25vh;
     /* border: black solid 1px; */
-    
+
 }
 
-.photo_container img
-{
+.photo_container img {
     height: 15vh;
 }
 
-.photo_container img:hover
-{
+.photo_container img:hover {
     /* border: 3px solid rgba(0, 183, 255, 0.644); */
     height: 20vh;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.selected
-{
+.selected {
     border: rgb(252, 89, 184) solid 3px;
 }
 
-.selected:hover
-{
-    cursor:not-allowed !important;
-    border: rgb(252, 89, 184)  solid 3px !important;
+.selected:hover {
+    cursor: not-allowed !important;
+    border: rgb(252, 89, 184) solid 3px !important;
     height: 15vh !important;
 }
 
-.appendix_selected
-{
+.appendix_selected {
     width: 100% !important;
     background-color: lightcoral !important;
 }
-.appendix_selected:hover
-{
+
+.appendix_selected:hover {
     width: 100% !important;
-    cursor:auto !important;
+    cursor: auto !important;
     background-color: lightcoral !important;
 }
