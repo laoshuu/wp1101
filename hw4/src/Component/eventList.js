@@ -6,14 +6,16 @@ class EventList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            event: this.props.event, checked: false,
-            addItemCnt: this.props.addItemCnt, subItemCnt: this.props.subItemCnt,
+            event: this.props.event, checked: this.props.event.checked,
+            addItemCnt: this.props.addItemCnt, subItemCnt: this.props.subItemCnt, itemCnt: this.props.itemCnt - 1,
             deleteActive: this.props.deleteActive, deleteComplete: this.props.deleteComplete,
+            updatePlans: this.props.updatePlans,
             style: null
         };
     }
 
     handleClick = () => {
+        // console.log(this.state.event.status)
         if (this.state.event.status === "active") {
             this.setState({ checked: true });
             this.state.subItemCnt();
@@ -26,6 +28,8 @@ class EventList extends Component {
             this.setState({ event: { status: "active", order: this.state.event.order } })
             this.setState({ style: null })
         }
+        this.state.updatePlans(this.state.itemCnt, this.state.event.status, this.state.event.order);
+        // console.log(this.state.event.status)
     }
 
     handleDelete = () => {

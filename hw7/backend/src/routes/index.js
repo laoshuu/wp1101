@@ -5,33 +5,46 @@ const router = express.Router()
 
 router.post('/api/create-card', async (req, res) => {
 
-    const existing = await ScoreCard.findOne({ "name": `${req.body.name}`, "subject": `${req.body.subject}` })
-    if (existing !== null) {
-        try {
-            await ScoreCard.updateOne({ "_id": existing._id }, { $set: { "score": `${req.body.score}` } })
-                .then(() => {
+    // const existing = await ScoreCard.findOne({ "name": `${req.body.name}`, "subject": `${req.body.subject}` })
+    // if (existing !== null) {
+    //     try {
+    //         await ScoreCard.updateOne({ "_id": existing._id }, { $set: { "score": `${req.body.score}` } })
+    //             .then(() => {
+    //                 res.send({ message: `Updating (${req.body.name}, ${req.body.subject}, ${req.body.score})`, card: true })
+    //             })
+    //     }
+    //     catch (e) {
+    //         throw new Error("Data updating error:" + e)
+    //     }
+    // }
+    // else {
+    //     try {
+    //         const scoreCard = new ScoreCard({
+    //             name: req.body.name,
+    //             subject: req.body.subject,
+    //             score: req.body.score
+    //         })
+    //         await scoreCard.save()
+    //             .then(() => {
+    //                 res.send({ message: `Adding (${req.body.name}, ${req.body.subject}, ${req.body.score})`, card: true })
+    //             })
+    //     }
+    //     catch (e) {
+    //         throw new Error("Data creation error:" + e)
+    //     }
+    // }
+    try {
+        await ScoreCard.findOneAndUpdate({ "name": req.body.name, "subject": req.body.subject }, { $set: { "score": req.body.score } }, { upsert: true, new: true, rawResult: true })
+            .then((result) => {
+                if (result.lastErrorObject.updatedExisting)
                     res.send({ message: `Updating (${req.body.name}, ${req.body.subject}, ${req.body.score})`, card: true })
-                })
-        }
-        catch (e) {
-            throw new Error("Data updating error:" + e)
-        }
-    }
-    else {
-        try {
-            const scoreCard = new ScoreCard({
-                name: req.body.name,
-                subject: req.body.subject,
-                score: req.body.score
-            })
-            await scoreCard.save()
-                .then(() => {
+                else
                     res.send({ message: `Adding (${req.body.name}, ${req.body.subject}, ${req.body.score})`, card: true })
-                })
-        }
-        catch (e) {
-            throw new Error("Data creation error:" + e)
-        }
+
+            })
+    }
+    catch (e) {
+        throw new Error("Data updating error:" + e)
     }
 
 })

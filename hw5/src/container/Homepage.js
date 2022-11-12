@@ -14,6 +14,7 @@ const Homepage = () => {
     const [memoryDeg, setMemoryDeg] = useState(0);
     const [answer, setAnswer] = useState(0);
 
+
     const handleClick = (clicked) => {
         if (operator !== "=" && firstNum === true) {
             setoperand2(operand1);

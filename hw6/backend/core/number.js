@@ -6,4 +6,11 @@ const genNumber = () => {
     return number
 }
 
-export { genNumber, getNumber }
+let guess = 10
+const guessDec = () => {
+    guess = guess - 1;
+    return guess;
+}
+const guessReset = () => { guess = 10 }
+
+export { genNumber, getNumber, guessDec, guessReset }

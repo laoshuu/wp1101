@@ -23,19 +23,17 @@ function Board(props) {
 
   // TODO 2-(2): fetch all posts from database
   useEffect(() => {
-    const result = async () => { await getPosts() }
+    const result = getPosts()
     if (typeof (result) !== String)
       setPosts(result)
 
-  }, [])
+  }, [posts])
 
   return (
     <>
       <div className="board-navbar">
         <div style={{ fontWeight: 'bold', fontSize: 28 }}>Post List</div>
-        <Button className="board-launch-btn" variant="contained" color="primary" id="pid-post-btn" onClick={
-          () => props.navigate('/new')
-        }>New Post</Button>
+        <Button className="board-launch-btn" variant="contained" color="primary" id="pid-post-btn" onClick={() => props.navigate('/new')}>New Post</Button>
       </div>
 
       <div className="board-discuss-container">

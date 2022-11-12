@@ -1,5 +1,5 @@
 import express from 'express'
-import { genNumber, getNumber } from '../core/number'
+import { genNumber, getNumber, guessDec, guessReset } from '../core/number'
 
 const roughScale = (x, base) => {
     const parsed = parseInt(x, base);
@@ -23,12 +23,18 @@ router.get('/guess', (req, res) => {
         res.send({ msg: 'Equal' })
     }
     else {
-        (guessed > number) ? res.send({ msg: 'Smaller' }) : res.send({ msg: 'Bigger' })
+        const left = guessDec();
+        console.log(left)
+        if (left == 0)
+            res.send({ msg: 'Gameover' })
+        else
+            (guessed > number) ? res.send({ msg: 'Smaller' }) : res.send({ msg: 'Bigger' })
     }
 })
 
 router.post('/restart', (_, res) => {
     console.log(genNumber())
+    guessReset();
     res.json({ msg: 'Restart the game' })
 })
 
